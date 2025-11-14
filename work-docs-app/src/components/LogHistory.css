@@ -1,0 +1,101 @@
+.log-history {
+  margin-top: 2rem;
+}
+
+.log-history h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.log-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #3498db;
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.log-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.time-badge {
+  background-color: #ecf0f1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #34495e;
+}
+
+.log-section {
+  margin-bottom: 1rem;
+}
+
+.log-section:last-child {
+  margin-bottom: 0;
+}
+
+.log-section h4 {
+  margin: 0 0 0.5rem 0;
+  color: #34495e;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.log-section p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+.no-logs {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-logs p {
+  color: #7f8c8d;
+  margin: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .log-card {
+    padding: 1rem;
+  }
+
+  .log-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
