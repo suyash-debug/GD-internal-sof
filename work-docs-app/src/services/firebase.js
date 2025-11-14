@@ -3,14 +3,13 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 // Firebase configuration
-// Replace these values with your actual Firebase project credentials
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyB55oCrR7ZOfEBvwDFzxbnaZRn0ondZ8A4",
+  authDomain: "gd-internal-sof.firebaseapp.com",
+  projectId: "gd-internal-sof",
+  storageBucket: "gd-internal-sof.firebasestorage.app",
+  messagingSenderId: "450456616278",
+  appId: "1:450456616278:web:6df2884aa352e8c395aaf7"
 };
 
 // Initialize Firebase
