@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { collection, query, where, orderBy, getDocs } from 'firebase/firestore';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { useAuth } from '../contexts/AuthContext';
 import './LogHistory.css';
@@ -11,33 +11,50 @@ const LogHistory = ({ refreshTrigger }) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchLogs = async () => {
-      setLoading(true);
-      setError('');
-      try {
-        const q = query(
-          collection(db, 'dailyLogs'),
-          where('userId', '==', currentUser.uid),
-          orderBy('date', 'desc')
-        );
+    if (!currentUser) return;
 
-        const querySnapshot = await getDocs(q);
-        const logsData = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
+    setLoading(true);
+    setError('');
 
-        setLogs(logsData);
-      } catch (err) {
-        console.error('Error fetching logs:', err);
-        setError('Failed to load logs. Please try again.');
-      } finally {
-        setLoading(false);
-      }
-    };
+    try {
+      // Only use where() clause, sort on client side to avoid needing composite index
+      const q = query(
+        collection(db, 'dailyLogs'),
+        where('userId', '==', currentUser.uid)
+      );
 
-    fetchLogs();
-  }, [currentUser, refreshTrigger]);
+      const unsubscribe = onSnapshot(
+        q,
+        (querySnapshot) => {
+          const logsData = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+          }));
+
+          // Sort by createdAt on the client side
+          logsData.sort((a, b) => {
+            if (!a.createdAt) return 1;
+            if (!b.createdAt) return -1;
+            return b.createdAt.toMillis() - a.createdAt.toMillis();
+          });
+
+          setLogs(logsData);
+          setLoading(false);
+        },
+        (err) => {
+          console.error('Error fetching logs:', err);
+          setError('Failed to load logs. Please try again.');
+          setLoading(false);
+        }
+      );
+
+      return () => unsubscribe();
+    } catch (err) {
+      console.error('Error setting up logs listener:', err);
+      setError('Failed to load logs. Please try again.');
+      setLoading(false);
+    }
+  }, [currentUser]);
 
   if (loading) {
     return <div className="loading">Loading your logs...</div>;

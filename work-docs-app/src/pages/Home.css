@@ -1,73 +1,84 @@
 .home-page {
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  margin: -2rem;
+  background: var(--primary-white);
   padding: 2rem;
 }
 
 .home-content {
   text-align: center;
-  max-width: 600px;
-  background: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 100%;
+  background: var(--primary-white);
+  padding: 4rem 3rem;
+  border-radius: 2px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lg);
 }
 
 .home-content h1 {
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 1rem;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 .tagline {
-  color: #7f8c8d;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+  line-height: 1.7;
 }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .feature h3 {
-  margin: 0 0 0.5rem 0;
-  color: #2c3e50;
-  font-size: 1.2rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .feature p {
   margin: 0;
-  color: #7f8c8d;
-  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 .google-sign-in-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: white;
-  color: #444;
-  border: 1px solid #ddd;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
+  background: var(--primary-white);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.875rem 2.5rem;
+  border-radius: 2px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   margin: 2rem auto 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .google-sign-in-btn:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: var(--background);
+  border-color: var(--text-secondary);
+  box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
 
@@ -78,20 +89,27 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
   .home-page {
-    margin: -1rem;
     padding: 1rem;
   }
 
   .home-content {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
   .home-content h1 {
     font-size: 2rem;
   }
 
+  .tagline {
+    font-size: 1rem;
+  }
+
   .features {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+
+  .google-sign-in-btn {
+    width: 100%;
   }
 }

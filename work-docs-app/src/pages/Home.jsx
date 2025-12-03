@@ -26,23 +26,19 @@ const Home = () => {
   return (
     <div className="home-page">
       <div className="home-content">
-        <h1>Work Documentation Tool</h1>
+        <h1>GD Internal</h1>
         <p className="tagline">
           Track your daily work, meetings, and discussions in one place.
         </p>
 
         <div className="features">
           <div className="feature">
-            <h3>📝 Daily Logs</h3>
+            <h3>Daily Logs</h3>
             <p>Keep track of what you accomplish each day</p>
           </div>
           <div className="feature">
-            <h3>💬 Discussions</h3>
+            <h3>Discussions</h3>
             <p>Document important meetings and conversations</p>
-          </div>
-          <div className="feature">
-            <h3>🔒 Secure</h3>
-            <p>Google OAuth authentication for company employees</p>
           </div>
         </div>
 

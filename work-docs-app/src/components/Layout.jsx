@@ -17,7 +17,7 @@ const Layout = () => {
     <div className="layout">
       <header className="header">
         <div className="header-content">
-          <h1 className="logo">Work Docs</h1>
+          <h1 className="logo">GD Internal</h1>
           {currentUser && (
             <nav className="nav">
               <Link to="/daily-logs" className="nav-link">Daily Logs</Link>

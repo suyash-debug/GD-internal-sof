@@ -1,25 +1,24 @@
 .discussions-page h1 {
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
-.coming-soon {
-  background: white;
-  padding: 3rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.coming-soon h2 {
-  color: #3498db;
-  margin-bottom: 1rem;
-}
-
-.coming-soon p {
-  color: #7f8c8d;
-  max-width: 600px;
-  margin: 0 auto;
+.page-description {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .discussions-page h1 {
+    font-size: 1.625rem;
+  }
+
+  .page-description {
+    font-size: 1rem;
+  }
 }

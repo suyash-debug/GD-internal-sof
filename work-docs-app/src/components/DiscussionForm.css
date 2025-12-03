@@ -1,13 +1,13 @@
-.daily-log-form {
+.discussion-form {
   background: var(--primary-white);
   padding: 2.5rem;
   border-radius: 8px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-light);
-  max-width: 900px;
+  margin-bottom: 3rem;
 }
 
-.daily-log-form h2 {
+.discussion-form h2 {
   margin-top: 0;
   margin-bottom: 2rem;
   color: var(--text-primary);
@@ -16,11 +16,11 @@
   letter-spacing: -0.02em;
 }
 
-.form-group {
+.discussion-form .form-group {
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.discussion-form .form-group label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -28,8 +28,8 @@
   font-size: 0.9375rem;
 }
 
-.form-group input,
-.form-group textarea {
+.discussion-form .form-group input,
+.discussion-form .form-group textarea {
   width: 100%;
   padding: 0.75rem 1rem;
   border: 1px solid var(--border-color);
@@ -42,20 +42,19 @@
   color: var(--text-primary);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.discussion-form .form-group input:focus,
+.discussion-form .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px var(--accent-light);
 }
 
-.form-group textarea {
+.discussion-form .form-group textarea {
   resize: vertical;
   line-height: 1.6;
-  min-height: 120px;
 }
 
-.submit-btn {
+.discussion-form .submit-btn {
   background: var(--accent-color);
   color: var(--primary-white);
   border: none;
@@ -68,19 +67,19 @@
   width: 100%;
 }
 
-.submit-btn:hover:not(:disabled) {
+.discussion-form .submit-btn:hover:not(:disabled) {
   background: var(--accent-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
-.submit-btn:disabled {
+.discussion-form .submit-btn:disabled {
   background: var(--border-color);
   cursor: not-allowed;
   transform: none;
 }
 
-.error-message {
+.discussion-form .error-message {
   background-color: #fef2f2;
   color: #dc2626;
   padding: 0.75rem 1rem;
@@ -90,13 +89,12 @@
   font-size: 0.875rem;
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
-  .daily-log-form {
+  .discussion-form {
     padding: 1.5rem;
   }
 
-  .daily-log-form h2 {
+  .discussion-form h2 {
     font-size: 1.5rem;
   }
 }
