@@ -1,5 +1,0 @@
-{
-  "installCommand": "npm install --prefix work-docs-app",
-  "buildCommand": "npm run build --prefix work-docs-app",
-  "outputDirectory": "work-docs-app/dist"
-}
