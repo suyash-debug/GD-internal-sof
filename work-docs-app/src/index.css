@@ -85,3 +85,35 @@ button {
 input, textarea {
   font-family: inherit;
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  :root {
+    font-size: 16px; /* Prevent iOS zoom on input focus */
+  }
+
+  body {
+    min-width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+  }
+
+  button, a, input, textarea, select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Improve touch targets */
+  button {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  input, textarea, select {
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    line-height: 1.5;
+  }
+}

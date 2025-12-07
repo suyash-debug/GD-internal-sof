@@ -143,10 +143,61 @@
 
 @media (max-width: 768px) {
   .discussion-form {
-    padding: 12px;
+    padding: 16px 12px;
   }
 
   .discussion-form h2 {
     font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .discussion-form .category-buttons {
+    gap: 6px;
+  }
+
+  .discussion-form .category-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .discussion-form .form-group input,
+  .discussion-form .form-group textarea,
+  .discussion-form .form-group select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .discussion-form .main-textarea {
+    font-size: 14px !important;
+    min-height: 100px;
+  }
+
+  .discussion-form .submit-btn {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .discussion-form .field-description {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discussion-form {
+    padding: 12px;
+  }
+
+  .discussion-form h2 {
+    font-size: 14px;
+  }
+
+  .discussion-form .category-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .discussion-form .form-group label {
+    font-size: 12px;
   }
 }

@@ -112,7 +112,15 @@
   }
 
   .nav {
-    display: none;
+    display: flex;
+    gap: 0;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 14px 8px;
+    font-size: 12px;
   }
 
   .user-section {
@@ -123,7 +131,37 @@
     display: none;
   }
 
+  .sign-out-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
   .main-content {
     padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0 8px;
+    height: 46px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .nav-link {
+    padding: 12px 6px;
+    font-size: 11px;
+  }
+
+  .sign-out-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .main-content {
+    padding: 8px;
   }
 }

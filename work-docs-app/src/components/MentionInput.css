@@ -67,3 +67,22 @@
 .mentions-dropdown::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
+
+@media (max-width: 768px) {
+  .mentions-dropdown {
+    max-height: 160px;
+    font-size: 13px;
+  }
+
+  .mention-item {
+    padding: 10px 12px;
+  }
+
+  .mention-user-name {
+    font-size: 13px;
+  }
+
+  .mention-user-email {
+    font-size: 12px;
+  }
+}
