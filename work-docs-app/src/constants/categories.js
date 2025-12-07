@@ -34,6 +34,13 @@ export const CATEGORIES = {
     icon: '',
     color: '#5A9E6B', // Green
   },
+  GENERAL: {
+    id: 'general',
+    name: 'General Discussion',
+    description: 'Everything else - when you\'re not sure which category fits',
+    icon: '',
+    color: '#6B7280', // Neutral Gray
+  },
 };
 
 export const getCategoryById = (id) => {
