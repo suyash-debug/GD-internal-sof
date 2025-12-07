@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import DailyLogs from './pages/DailyLogs';
 import Discussions from './pages/Discussions';
 
 // Protected route wrapper
@@ -17,18 +16,12 @@ const ProtectedRoute = ({ children }) => {
 };
 
 function AppRoutes() {
+  const { currentUser } = useAuth();
+
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={currentUser ? <Navigate to="/discussions" replace /> : <Home />} />
       <Route element={<Layout />}>
-        <Route
-          path="/daily-logs"
-          element={
-            <ProtectedRoute>
-              <DailyLogs />
-            </ProtectedRoute>
-          }
-        />
         <Route
           path="/discussions"
           element={

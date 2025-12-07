@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     if (currentUser) {
-      navigate('/daily-logs');
+      navigate('/discussions');
     }
   }, [currentUser, navigate]);
 
@@ -28,19 +28,8 @@ const Home = () => {
       <div className="home-content">
         <h1>GD Internal</h1>
         <p className="tagline">
-          Track your daily work, meetings, and discussions in one place.
+          Share ideas, collaborate, and discuss what matters.
         </p>
-
-        <div className="features">
-          <div className="feature">
-            <h3>Daily Logs</h3>
-            <p>Keep track of what you accomplish each day</p>
-          </div>
-          <div className="feature">
-            <h3>Discussions</h3>
-            <p>Document important meetings and conversations</p>
-          </div>
-        </div>
 
         <button onClick={handleSignIn} className="google-sign-in-btn">
           <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">

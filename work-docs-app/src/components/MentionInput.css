@@ -1,0 +1,69 @@
+.mention-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.mentions-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: var(--primary-white);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-bottom: 4px;
+}
+
+.mention-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.05s;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.mention-item:last-child {
+  border-bottom: none;
+}
+
+.mention-item:hover,
+.mention-item.selected {
+  background: var(--bg-secondary);
+}
+
+.mention-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mention-user-name {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.mention-user-email {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.mentions-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mentions-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mentions-dropdown::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.mentions-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

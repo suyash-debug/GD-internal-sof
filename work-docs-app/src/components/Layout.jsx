@@ -20,7 +20,6 @@ const Layout = () => {
           <h1 className="logo">GD Internal</h1>
           {currentUser && (
             <nav className="nav">
-              <Link to="/daily-logs" className="nav-link">Daily Logs</Link>
               <Link to="/discussions" className="nav-link">Discussions</Link>
             </nav>
           )}

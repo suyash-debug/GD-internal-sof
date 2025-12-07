@@ -12,11 +12,6 @@ const Discussions = () => {
 
   return (
     <div className="discussions-page">
-      <h1>Discussion & Meeting Notes</h1>
-      <p className="page-description">
-        Log discussions, meetings, and important conversations with your team.
-      </p>
-
       <DiscussionForm onSuccess={handleSuccess} />
       <DiscussionList key={refreshKey} />
     </div>

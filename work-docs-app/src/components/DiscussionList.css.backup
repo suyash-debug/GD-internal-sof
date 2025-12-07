@@ -6,87 +6,83 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
 .search-input {
-  width: 250px;
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 13px;
+  width: 300px;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9375rem;
   font-family: inherit;
-  transition: border-color 0.1s;
+  transition: all 0.2s ease;
   background: var(--primary-white);
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: none;
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .category-filters {
   display: flex;
-  gap: 8px;
+  gap: 0.75rem;
   flex-wrap: wrap;
   flex: 1;
 }
 
 .category-filter {
-  padding: 6px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background: var(--primary-white);
-  font-size: 13px;
-  font-weight: 400;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid;
+  border-radius: 20px;
+  background: transparent;
+  font-size: 0.9375rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .category-filter:hover {
-  background: var(--bg-secondary);
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .category-filter.active {
-  background: var(--accent-color);
-  color: var(--primary-white);
-  border-color: var(--accent-color);
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .discussions-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1.5rem;
 }
 
 .discussion-card {
   background: var(--primary-white);
-  border-radius: 4px;
+  border-radius: 12px;
   border: 1px solid var(--border-light);
-  box-shadow: none;
-  transition: none;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
   overflow: hidden;
 }
 
 .discussion-card:hover {
-  box-shadow: none;
-  transform: none;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .discussion-header {
-  padding: 12px 16px;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .discussion-meta {
@@ -96,66 +92,64 @@
 
 .category-badge {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 3px;
-  font-size: 11px;
-  font-weight: 500;
+  padding: 0.375rem 0.875rem;
+  border-radius: 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: white;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
+  margin-bottom: 0.75rem;
 }
 
 .discussion-meta h3 {
-  margin: 0 0 6px 0;
+  margin: 0 0 0.625rem 0;
   color: var(--text-primary);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 1.375rem;
+  font-weight: 700;
   line-height: 1.3;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 6px;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .tag {
-  padding: 2px 6px;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  border-radius: 3px;
-  font-size: 11px;
-  font-weight: 400;
+  padding: 0.25rem 0.75rem;
+  background: var(--accent-light);
+  color: var(--accent-color);
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
 }
 
 .author-info {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--text-secondary);
 }
 
 .author-name {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
 .separator {
-  color: var(--text-light);
+  color: var(--border-color);
 }
 
 .idea-stage {
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-size: 11px;
-  font-weight: 400;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
+  padding: 0.25rem 0.625rem;
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: var(--accent-light);
+  color: var(--accent-color);
 }
 
 .stage-seed {
@@ -174,78 +168,76 @@
 }
 
 .expand-btn {
-  padding: 6px 12px;
-  background: transparent;
-  color: var(--accent-color);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 400;
+  padding: 0.625rem 1.25rem;
+  background: var(--accent-color);
+  color: var(--primary-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .expand-btn:hover {
-  background: var(--bg-secondary);
-  transform: none;
+  background: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 .reactions-bar {
-  padding: 8px 16px;
+  padding: 0.875rem 1.5rem;
   border-top: 1px solid var(--border-light);
-  border-bottom: none;
-  background: var(--primary-white);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-secondary);
   display: flex;
-  gap: 6px;
+  gap: 0.5rem;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .reaction-btn {
-  padding: 4px 8px;
-  background: transparent;
-  border: none;
-  border-radius: 12px;
-  font-size: 13px;
+  padding: 0.375rem 0.75rem;
+  background: var(--primary-white);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  font-size: 0.9375rem;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 4px;
-  color: var(--text-secondary);
+  gap: 0.25rem;
 }
 
 .reaction-btn:hover {
-  background: var(--bg-secondary);
-  border: none;
-  transform: none;
+  background: var(--accent-light);
+  border-color: var(--accent-color);
+  transform: scale(1.05);
 }
 
 .reaction-btn.active {
-  background: var(--accent-light);
-  color: var(--accent-color);
-  border: none;
+  background: var(--accent-color);
+  color: var(--primary-white);
+  border-color: var(--accent-color);
 }
 
 .comments-count {
   margin-left: auto;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-  font-size: 13px;
-  font-weight: 400;
+  padding: 0.375rem 0.75rem;
+  background: var(--primary-white);
+  border-radius: 16px;
+  font-size: 0.9375rem;
+  font-weight: 600;
   color: var(--text-secondary);
 }
 
 .discussion-details {
-  padding: 12px 16px;
+  padding: 1.5rem;
   background: var(--bg-secondary);
-  border-top: 1px solid var(--border-light);
 }
 
 .discussion-section {
-  margin-bottom: 12px;
+  margin-bottom: 1.5rem;
 }
 
 .discussion-section:last-child {
@@ -253,52 +245,50 @@
 }
 
 .discussion-section h4 {
-  margin: 0 0 8px 0;
+  margin: 0 0 0.75rem 0;
   color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .discussion-content,
 .summary {
   margin: 0;
   color: var(--text-primary);
-  line-height: 1.5;
+  line-height: 1.7;
   white-space: pre-wrap;
-  font-size: 13px;
 }
 
 .wild-ideas-section {
-  padding: 12px;
-  background: #f5f3ff;
-  border: 1px solid #9B6B9E;
-  border-radius: 4px;
-  margin-bottom: 12px;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);
+  border: 2px solid #9B6B9E;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
 }
 
 .water-idea {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .water-btn {
-  padding: 6px 12px;
-  background: #9B6B9E;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 400;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: all 0.2s ease;
 }
 
 .water-btn:hover:not(:disabled) {
-  background: #8a5b8d;
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 .water-btn:disabled {
@@ -307,64 +297,62 @@
 }
 
 .water-count {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: #5a4b6b;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .idea-stage-selector {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .idea-stage-selector label {
-  font-weight: 400;
+  font-weight: 600;
   color: #5a4b6b;
-  font-size: 13px;
 }
 
 .stage-select {
-  padding: 6px 12px;
-  border: 1px solid #9B6B9E;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border: 2px solid #9B6B9E;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
   background: white;
   cursor: pointer;
-  transition: border-color 0.1s;
+  transition: all 0.2s ease;
 }
 
 .stage-select:focus {
   outline: none;
-  box-shadow: none;
-  border-color: #7a5a7e;
+  box-shadow: 0 0 0 3px rgba(155, 107, 158, 0.2);
 }
 
 .comments-section {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border-light);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-light);
 }
 
 .comments-section h4 {
-  margin: 0 0 12px 0;
+  margin: 0 0 1rem 0;
   color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .comments-list {
-  margin-bottom: 12px;
+  margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1rem;
 }
 
 .comment {
-  padding: 8px 12px;
+  padding: 1rem;
   background: var(--primary-white);
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid var(--border-light);
 }
 
@@ -372,70 +360,69 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 0.5rem;
 }
 
 .comment-author {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 
 .comment-time {
-  font-size: 12px;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
 }
 
 .comment-text {
   margin: 0;
   color: var(--text-primary);
-  line-height: 1.4;
+  line-height: 1.6;
   white-space: pre-wrap;
-  font-size: 13px;
 }
 
 .add-comment {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.75rem;
 }
 
 .add-comment textarea {
   width: 100%;
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 13px;
+  padding: 0.875rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9375rem;
   font-family: inherit;
   resize: vertical;
-  min-height: 60px;
+  min-height: 80px;
   box-sizing: border-box;
-  transition: border-color 0.1s;
+  transition: all 0.2s ease;
 }
 
 .add-comment textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: none;
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .comment-btn {
   align-self: flex-end;
-  padding: 6px 16px;
+  padding: 0.75rem 1.5rem;
   background: var(--accent-color);
   color: var(--primary-white);
   border: none;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 400;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: all 0.2s ease;
 }
 
 .comment-btn:hover:not(:disabled) {
   background: var(--accent-hover);
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .comment-btn:disabled {
@@ -446,9 +433,9 @@
 .loading,
 .no-discussions {
   text-align: center;
-  padding: 24px;
+  padding: 3rem 1.5rem;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 1.125rem;
 }
 
 @media (max-width: 992px) {
@@ -469,7 +456,7 @@
 @media (max-width: 768px) {
   .discussion-header {
     flex-direction: column;
-    padding: 12px;
+    padding: 1.25rem;
   }
 
   .expand-btn {
@@ -477,24 +464,24 @@
   }
 
   .discussion-meta h3 {
-    font-size: 14px;
+    font-size: 1.125rem;
   }
 
   .category-filters {
-    gap: 6px;
+    gap: 0.5rem;
   }
 
   .category-filter {
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
   }
 
   .reactions-bar {
-    padding: 8px 12px;
+    padding: 0.75rem 1.25rem;
   }
 
   .discussion-details {
-    padding: 12px;
+    padding: 1.25rem;
   }
 
   .water-idea {

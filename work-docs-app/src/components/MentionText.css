@@ -1,0 +1,15 @@
+.mention-highlight {
+  background-color: transparent;
+  color: var(--accent-color);
+  padding: 0;
+  border-radius: 0;
+  font-weight: 500;
+  transition: none;
+}
+
+.mention-highlight:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
