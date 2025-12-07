@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { NotificationProvider } from './contexts/NotificationContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Discussions from './pages/Discussions';
@@ -39,7 +40,9 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <AppRoutes />
+        <NotificationProvider>
+          <AppRoutes />
+        </NotificationProvider>
       </AuthProvider>
     </Router>
   );

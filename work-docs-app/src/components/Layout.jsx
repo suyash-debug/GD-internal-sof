@@ -1,5 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import NotificationBell from './NotificationBell';
 import './Layout.css';
 
 const Layout = () => {
@@ -25,6 +26,7 @@ const Layout = () => {
           )}
           {currentUser && (
             <div className="user-section">
+              <NotificationBell />
               <span className="user-name">{currentUser.displayName}</span>
               <button onClick={handleSignOut} className="sign-out-btn">
                 Sign Out

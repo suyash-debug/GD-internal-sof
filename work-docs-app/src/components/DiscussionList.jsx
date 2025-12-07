@@ -10,9 +10,11 @@ import {
   doc,
   updateDoc,
   increment,
-  arrayUnion
+  arrayUnion,
+  getDoc
 } from 'firebase/firestore';
 import { getCategoryById, getAllCategories } from '../constants/categories';
+import { useNotifications } from '../contexts/NotificationContext';
 import MentionInput from './MentionInput';
 import MentionText from './MentionText';
 import './DiscussionList.css';
@@ -28,6 +30,7 @@ const DiscussionList = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const categories = getAllCategories();
+  const { createNotification } = useNotifications();
 
   // Update CSS custom properties when category changes
   useEffect(() => {
@@ -161,6 +164,15 @@ const DiscussionList = () => {
         commentsCount: increment(1)
       });
 
+      // Send notification to discussion author
+      const discussion = discussions.find(d => d.id === discussionId);
+      if (discussion && discussion.authorId !== user.uid) {
+        await createNotification(discussion.authorId, 'comment', {
+          userName: user.displayName,
+          discussionId
+        });
+      }
+
       setNewComment('');
     } catch (err) {
       console.error('Error adding comment:', err);
@@ -193,6 +205,15 @@ const DiscussionList = () => {
         await updateDoc(discussionRef, {
           [`reactions.${emoji}`]: arrayUnion(user.uid)
         });
+
+        // Send notification to discussion author
+        if (discussion && discussion.authorId !== user.uid) {
+          await createNotification(discussion.authorId, 'reaction', {
+            userName: user.displayName,
+            discussionId,
+            emoji
+          });
+        }
       }
     } catch (err) {
       console.error('Error adding reaction:', err);
@@ -211,6 +232,15 @@ const DiscussionList = () => {
       await updateDoc(discussionRef, {
         wateredBy: arrayUnion(user.uid)
       });
+
+      // Send notification to discussion author
+      const discussion = discussions.find(d => d.id === discussionId);
+      if (discussion && discussion.authorId !== user.uid) {
+        await createNotification(discussion.authorId, 'water', {
+          userName: user.displayName,
+          discussionId
+        });
+      }
     } catch (err) {
       console.error('Error watering idea:', err);
       alert(err.message);

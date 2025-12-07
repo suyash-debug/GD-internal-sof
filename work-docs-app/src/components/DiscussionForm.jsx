@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { db, auth } from '../services/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 import { getAllCategories, getCategoryById } from '../constants/categories';
+import { useNotifications } from '../contexts/NotificationContext';
 import MentionInput from './MentionInput';
 import './DiscussionForm.css';
 
@@ -14,6 +15,7 @@ const DiscussionForm = ({ onSuccess }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const categories = getAllCategories();
+  const { createNotification } = useNotifications();
 
   // Update CSS custom properties when category changes in form
   useEffect(() => {
@@ -92,6 +94,35 @@ const DiscussionForm = ({ onSuccess }) => {
           wateredBy: [], // user IDs who added to this idea
         })
       });
+
+      // Extract mentions and send notifications
+      const mentions = formData.discussion.match(/@\w+/g) || [];
+      if (mentions.length > 0) {
+        // Get unique mentions
+        const uniqueMentions = [...new Set(mentions.map(m => m.substring(1)))];
+
+        // Find users by display name
+        for (const mentionName of uniqueMentions) {
+          try {
+            const usersQuery = query(
+              collection(db, 'discussions'),
+              where('authorName', '==', mentionName)
+            );
+            const querySnapshot = await getDocs(usersQuery);
+
+            if (!querySnapshot.empty) {
+              const mentionedUserId = querySnapshot.docs[0].data().authorId;
+              if (mentionedUserId !== user.uid) {
+                await createNotification(mentionedUserId, 'mention', {
+                  userName: user.displayName
+                });
+              }
+            }
+          } catch (err) {
+            console.error('Error sending mention notification:', err);
+          }
+        }
+      }
 
       setFormData({ discussion: '', category: 'technical', tags: '' });
       if (onSuccess) onSuccess();
